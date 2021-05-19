@@ -1,0 +1,48 @@
+.about-us {
+    display: flex;
+
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
+
+    &__content {
+        width: 100%;
+        padding: 0 4rem;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        @include respond(tab-land) {
+            padding: 0 0 2rem 0;
+        }
+    }
+
+    &__heading {
+       margin-bottom: 3rem; 
+
+       @include respond(tab-port) {
+           margin-bottom: 2rem;
+       }
+    }
+
+    &__paragraph {
+        &:not(:last-child) {
+            margin-bottom: 1.5rem;
+
+            @include respond(tab-port) {
+                margin-bottom: .8rem;
+            }
+        }
+    }
+
+    &__img-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__img {
+        object-fit: cover;
+        width: 100%;
+    }
+}

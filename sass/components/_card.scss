@@ -1,0 +1,80 @@
+.card {
+    width: 43.5vw;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: $shadow-primary;
+    position: relative;
+    margin-bottom: 3vw;
+
+    @include respond(tab-port) {
+        width: 90vw;
+    }
+
+    &__img-wrapper {
+        width: 100%;
+        height: 90%;
+    }
+
+    &__img {
+        height: auto;
+        width: 100%;
+        border-radius: 1.5rem;
+        object-fit: cover;
+        
+        @include respond(tab-port) {
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+    }
+
+    &__content {
+        padding: 3rem;
+        background-color: $color-white;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(calc(100% - 10.9rem));
+        transition: all .4s;
+
+        @include respond(tab-port) {
+            position: relative;
+            transform: translateY(-76%);
+        }
+    }
+    
+    &__details {
+        margin-bottom: 2rem;
+    }
+    
+    &__length,
+    &__quanity {
+        color: $color-white;
+        background-color: $color-bg-secondary;
+        border-radius: 50px;
+        padding: .1rem 1rem .2rem;
+    }
+    
+    &__date {
+        color: $color-bg-secondary
+    }
+    
+    &__heading {
+        margin-bottom: 1rem;
+    }
+    
+    &.hidden {
+        display: none;
+    }
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &:hover &__content,
+    &:focus &__content {
+        transform: translateY(0);
+        
+        @include respond(tab-port) {
+            transform: translateY(-76%);
+        }
+    }
+}

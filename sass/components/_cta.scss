@@ -1,0 +1,11 @@
+.cta {
+    @include absCenter;
+    width: 90vw;
+
+    &__text {
+        font-size: 1.8rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+    }
+}

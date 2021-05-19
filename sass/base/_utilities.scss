@@ -1,0 +1,34 @@
+.u-center-text {text-align: center !important;}
+
+.u-mb-sm {margin-bottom: 1rem !important;}
+.u-mb-md {
+    margin-bottom: 5rem !important;
+
+    @include respond(tab-port) {
+        margin-bottom: 4rem !important;
+    } 
+}
+
+.u-mb-big {
+    margin-bottom: 6rem !important;
+
+    @include respond(tab-port) {
+        margin-bottom: 5rem !important;
+    } 
+}
+
+.u-mt-sm {
+    margin-top: 3rem !important;
+
+    @include respond(tab-port) {
+        margin-top: 1rem !important;
+    }
+}
+.u-mt-md {margin-top: 6rem !important;}
+.u-mt-big {margin-top: 8rem !important;}
+.u-mt-hg {margin-top: 10rem !important;}
+
+.u-content-wrapper {
+    width: 90vw;
+    margin: 0 auto;
+}

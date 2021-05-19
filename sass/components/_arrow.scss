@@ -1,0 +1,79 @@
+.arrow {
+    width: 2.6rem;
+    height: 1.5rem;
+
+    &--header {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 10vh;
+    }
+
+    &__left,
+    &__right,
+    &__left::before,
+    &__right::before,
+    &__left::after,
+    &__right::after {
+        transition: all .4s;
+        position: absolute;
+        height: 1px;
+        width: 1.5rem;
+        background-color: $color-white;
+        bottom: .5rem;
+    }
+
+    &__left {
+        transform: rotate(45deg);
+        left: 0;
+
+        &::before,
+        &::after {
+            content: "";
+            transform: translateX(0) translateY(.5rem);
+        }
+    }
+    
+    &__right {
+        transform: rotate(-45deg);
+        right: 0;
+        
+        &::before,
+        &::after {
+            content: "";
+            transform: translateX(0) translateY(.5rem);
+        }
+    }
+    
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+
+    &:hover &__left,
+    &:focus &__left,
+    &:hover &__right,
+    &:focus &__right {
+        bottom: 0;
+    }
+    
+    &:hover &__left::before,
+    &:focus &__left::before {
+        transform: translateX(-.5rem) translateY(-.1rem);
+    }
+
+    &:hover &__right::before,
+    &:focus &__right::before {
+        transform: translateX(.5rem) translateY(-.1rem);
+    }
+
+    &:hover &__left::after,
+    &:focus &__left::after {
+        transform: translateX(.5rem) translateY(1rem);
+    }
+
+    &:hover &__right::after,
+    &:focus &__right::after {
+        transform: translateX(-.5rem) translateY(1rem);
+    }
+}

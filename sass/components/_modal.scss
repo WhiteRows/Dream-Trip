@@ -1,0 +1,57 @@
+.modal {
+    transform: scale(0);
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(1px);
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    transition: scale .4s;
+
+    &.active{
+        transform: scale(1);
+        display: block;
+    }
+
+    &__window {
+        @include absCenter;     
+    }
+
+    &__close-btn {
+        position: absolute;
+        right: 6rem;
+        top: 6rem;
+        width: 2rem;
+        height: 2rem;
+
+        @include respond(tab-port) {
+            right: 3rem;
+            top: 4rem;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: .9rem;
+            left: -.4rem;
+            background-color: $color-text-primary;
+            height: .1rem;
+            width: 2.5rem;
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: .9rem;
+            left: -.4rem;
+            background-color: $color-text-primary;
+            height: .1rem;
+            width: 2.5rem;
+            transform: rotate(-45deg);
+        }
+    }
+}

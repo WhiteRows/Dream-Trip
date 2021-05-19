@@ -1,0 +1,71 @@
+.contact {
+    display: flex;
+
+    @include respond(tab-port) {
+        justify-content: center;
+    }
+
+    &__phone-wrapper {
+        width: 50%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include respond(tab-port) {
+            box-shadow: $shadow-primary;
+            border-radius: 50%;
+            width: 6.5rem;
+            height: 6.5rem;
+            background-color: $color-white;
+
+            position: fixed;
+            bottom: 5vw;
+            left: 5vw;
+        }
+    }
+
+    &__phone-link {
+        transition: all .4s;
+
+        @include respond(tab-port) {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        @include respond(phone) {
+            top: 1.25rem;
+            left: 1.25rem;
+        }
+        
+        &:hover,
+        &:focus {
+            outline: none;
+            transform: scale(1.1);
+        }
+    }
+
+    &__phone-logo {
+
+        @include respond(phone){
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+
+    &__phone-number {
+        text-decoration: none;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+            text-decoration: underline;
+        }
+    }
+}
